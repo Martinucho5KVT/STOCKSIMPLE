@@ -1,0 +1,23 @@
+{
+  "name": "muestra",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -e js,hbs,css,json index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.11.3"
+  }
+}

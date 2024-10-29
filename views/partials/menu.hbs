@@ -1,0 +1,25 @@
+<!-- Navbar -->
+<nav class="menu navbar navbar-expand-lg navbar-light fondo_menu">
+    <div class="container-fluid">
+        <div class="row w-100 align-items-center">
+            <div class="col-3">
+                <img src="./logo.png" class="imagen_logo">
+            </div>
+            <h1 class="navbar-text col-6 d-flex justify-content-center text-light texto">Compu Stock</h1>
+            <div class="col-3">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        {{#each botones}}
+                            <li class="nav-link active nav-item">
+                                <a class="nav-link text-light boton" aria-current="page" href="{{ruta}}">{{nombre}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

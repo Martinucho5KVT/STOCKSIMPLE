@@ -1,0 +1,28 @@
+<div class="row justify-content-center mt-5">
+    <div class="col-10 row">
+        <div class="col-5  d-flex align-items-center row">
+            <div class="input-group input-group-sm">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Buscar</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+        </div>
+    </div>
+    <div class="col-10  mt-5 row">
+        {{#each tienda}}
+            <div class="col-4 elemento buscador"> 
+                <div class="card">
+                    <div class="card-body row justify-content-center">
+                        <h5 class="card-title col-12 d-flex justify-content-center texto2"> {{ nombre }}</h5>
+                        <img src="{{imagen}}" class="imagen">
+                        <p class="card-text d-flex justify-content-center texto2"> U$S {{ precio }}</p>
+                        <div class="botones d-flex justify-content-center componentes">
+                            {{#each botones}}
+                                <button class="btn btn-primary boton boton2" onclick="{{funcion}}">{{ nombre }}</button>
+                            {{/each }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

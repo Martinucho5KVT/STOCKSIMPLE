@@ -1,0 +1,65 @@
+.buscador{
+    height: 100px;
+}
+.input-group-text{
+    font-size: 2rem !important;
+    font-weight: bold;
+    color: rgb(22, 110, 77);
+    border-left: 2px solid rgb(22, 110, 77);
+    border-top: 2px solid rgb(22, 110, 77);
+    border-bottom: 2px solid rgb(22, 110, 77);
+    border-right:  none;
+    box-shadow: 1px 1px 1px rgb(73, 73, 73),2px 2px 2px rgb(255, 255, 255),
+    3px 3px 3px rgb(42, 41, 41),4px 4px 2px rgb(255, 255, 255),5px 5px 2px rgb(15, 15, 15);
+
+}
+.form-control{
+    border: 2px solid rgb(22, 110, 77);
+    border-right: 2px solid rgb(22, 110, 77);
+    border-top: 2px solid rgb(22, 110, 77);
+    border-bottom: 2px solid rgb(22, 110, 77);
+    border-left: 2px solid rgb(22, 110, 77);
+    box-shadow: 1px 1px 1px rgb(73, 73, 73),2px 2px 2px rgb(255, 255, 255),
+    3px 3px 3px rgb(42, 41, 41),4px 4px 2px rgb(255, 255, 255),5px 5px 2px rgb(15, 15, 15);
+   
+}
+.elemento {
+    height: 500px;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    
+}
+.card{
+    height: 100%;
+    box-shadow: 1px 1px 1px rgb(73, 73, 73),2px 2px 2px rgb(255, 255, 255),
+    3px 3px 3px rgb(42, 41, 41),4px 4px 2px rgb(255, 255, 255),5px 5px 2px rgb(15, 15, 15);
+}
+.imagen{
+    width: 220px;
+    height: 200px;
+}
+.boton2{
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 2px solid rgb(22, 110, 77);
+    color: rgb(22, 110, 77);
+    font-weight: bold;
+    margin-right: 50px;
+    box-shadow: 1px 1px 1px rgb(73, 73, 73),2px 2px 2px rgb(255, 255, 255),
+    3px 3px 3px rgb(42, 41, 41),4px 4px 2px rgb(255, 255, 255),5px 5px 2px rgb(15, 15, 15);
+    
+}
+.btn:nth-child(1){
+    margin-left: 50px;
+}
+.boton2:hover{
+    transition: .5s;
+    background-color: rgb(22, 110, 77);
+    border: 2px solid rgb(22, 110, 77);
+}
+.texto2{
+    font-weight: bold;
+    color: rgb(22, 110, 77);
+    font-size: 1.5rem;
+}

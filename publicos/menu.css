@@ -1,0 +1,49 @@
+.fondo_menu {
+    background-color: rgb(22, 110, 77);
+    box-shadow: 1px 1px 1px rgb(73, 73, 73),2px 2px 2px rgb(255, 255, 255),
+  3px 3px 3px rgb(42, 41, 41),4px 4px 2px rgb(255, 255, 255),5px 5px 2px rgb(15, 15, 15);
+}
+
+.boton{
+    display: flex;
+    width: 100px;
+    height: 88px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    
+    
+}
+
+.boton:hover::after{
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid white;
+    height: 88px;
+    margin-bottom: 30px;
+    animation: animar_boton .5s;
+    width: 100px;
+}
+
+.imagen_logo{
+    width: 70px;
+    height: 70px;
+    margin-left: 70px;
+}
+.texto{
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    font-size: 2,5rem;
+    text-shadow: 1px 1px 3px rgb(255, 255, 255), 2px 2px 4px rgb(13, 50, 109), 3px 3px 1px rgb(0, 0, 0);
+}
+@keyframes animar_boton{
+    from {
+        width: 10px;
+    }
+    to{
+        width: 100px;
+    }
+   
+}
