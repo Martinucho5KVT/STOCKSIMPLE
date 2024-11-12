@@ -1,49 +1,76 @@
 .fondo_menu {
-    background-color: rgb(22, 110, 77);
-    box-shadow: 1px 1px 1px rgb(73, 73, 73),2px 2px 2px rgb(255, 255, 255),
-  3px 3px 3px rgb(42, 41, 41),4px 4px 2px rgb(255, 255, 255),5px 5px 2px rgb(15, 15, 15);
+    position: fixed; /* Fija la barra de menú en la parte izquierda */
+    top: 0;
+    left: 0;
+    width: 200px; /* Ancho de la barra de menú */
+    height: 100%; /* Altura de la barra de menú */
+    background-color: rgb(9, 222, 241);
+    box-shadow: 1px 1px 1px rgb(73, 73, 73), 2px 2px 2px rgb(255, 255, 255),
+        3px 3px 3px rgb(42, 41, 41), 4px 4px 2px rgb(255, 255, 255), 5px 5px 2px rgb(15, 15, 15);
+
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+    justify-content: flex-start; /* Alinea los elementos al principio */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding-top: 20px; /* Espacio superior */
 }
 
-.boton{
+.d-flex {
+    display: flex; /* Aplica el modelo Flexbox */
+}
+
+.flex-column {
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+}
+
+.navbar-nav {
     display: flex;
-    width: 100px;
-    height: 88px;
+    flex-direction: column; /* Asegura que los elementos de la navegación estén en columna */
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 0; /* Elimina padding extra */
+    margin: 0; /* Elimina margenes extra */
+}
+
+.nav-item {
+    width: 100%; /* Hace que cada elemento de la lista ocupe el 100% del ancho disponible */
+}
+
+.boton {
+    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    background-color: transparent;
-    color: white;
-    
-    
+    width: 100%; /* Los botones ocupan todo el ancho */
+    height: 60px; /* Altura de los botones */
+    background-color: violet;
+    color: red;
+    margin-bottom: 10px;
+    border-radius: 5px; /* Bordes redondeados opcionales */
+    text-align: center;
+    padding: 0; /* Elimina padding innecesario */
 }
 
-.boton:hover::after{
-    content: "";
-    position: absolute;
-    border-bottom: 2px solid white;
-    height: 88px;
-    margin-bottom: 30px;
-    animation: animar_boton .5s;
+.boton:hover {
+    background-color: #9b4dca; /* Cambiar el color cuando se pase el ratón por encima */
+}
+
+.imagen_logo {
     width: 100px;
+    height: 100px;
+    margin-bottom: 20px; /* Espacio debajo del logo */
 }
 
-.imagen_logo{
-    width: 70px;
-    height: 70px;
-    margin-left: 70px;
-}
-.texto{
-    word-spacing: 10px;
+.texto {
+    font-size: 2rem;
+    font-weight: bold;
     letter-spacing: 5px;
-    font-size: 2,5rem;
-    text-shadow: 1px 1px 3px rgb(255, 255, 255), 2px 2px 4px rgb(13, 50, 109), 3px 3px 1px rgb(0, 0, 0);
+    text-align: center;
+    color: white;
+    margin-bottom: 20px; /* Espacio debajo del texto */
 }
-@keyframes animar_boton{
-    from {
-        width: 10px;
-    }
-    to{
-        width: 100px;
-    }
-   
+.row {
+    display: flex;
+    flex-direction: column; /* Esto hace que los elementos hijos se dispongan en una columna */
+    align-items: center; /* Esto centra los elementos en el eje horizontal */
+    justify-content: flex-start; /* Esto alinea los elementos al inicio del contenedor */
 }

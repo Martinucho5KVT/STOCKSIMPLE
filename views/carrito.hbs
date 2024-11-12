@@ -1,0 +1,60 @@
+<head>
+    <link rel="stylesheet" href="/carrito.css"> <!-- Aquí se hace referencia al archivo carrito.css -->
+</head>
+<div class="carrito-container">
+    <h3>Carrito de Compras</h3>
+    
+    {{#if carrito.length}}
+    <div class="productos-carrito">
+        {{#each carrito}}
+            <div class="producto-carrito">
+                <div class="producto-info">
+                    <p>{{nombre}} (Modelo: {{modelo}})</p>
+                </div>
+                <div class="producto-eliminar">
+                    <button class="btn btn-danger" onclick="eliminarDelCarrito('{{modelo}}')">Eliminar</button>
+                </div>
+            </div>
+        {{/each}}
+        
+        <div class="compra-container">
+            <button class="btn btn-success" onclick="comprar()">Comprar</button>
+        </div>
+    </div>
+    {{else}}
+    <div class="carrito-vacio">
+        <p>Tu carrito está vacío.</p>
+    </div>
+    {{/if}}
+</div>
+
+<script>
+    function eliminarDelCarrito(modelo) {
+        fetch('/eliminarCarrito', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ modelo })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'ok') {
+                location.reload(); // Recargamos la página para actualizar el carrito
+            }
+        });
+    }
+
+    function comprar() {
+        fetch('/comprar', {
+            method: 'POST',
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'ok') {
+                alert('Compra realizada');
+                window.location.href = '/'; // Redirigimos al inicio después de la compra
+            }
+        });
+    }
+</script>

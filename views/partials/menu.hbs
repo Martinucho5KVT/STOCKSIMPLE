@@ -1,20 +1,25 @@
-<!-- Navbar -->
 <nav class="menu navbar navbar-expand-lg navbar-light fondo_menu">
     <div class="container-fluid">
-        <div class="row w-100 align-items-center">
-            <div class="col-3">
-                <img src="./logo.png" class="imagen_logo">
+        <!-- Contenedor Flex para organizar los elementos en columna -->
+        <div class="d-flex flex-column w-100">
+            <!-- Logo -->
+            <div class="d-flex justify-content-center mb-3">
+                <img src="./stock.png" class="imagen_logo" alt="Logo">
             </div>
-            <h1 class="navbar-text col-6 d-flex justify-content-center text-light texto">Compu Stock</h1>
-            <div class="col-3">
+            
+            <!-- Título -->
+            <h1 class="navbar-text d-flex justify-content-center text-light texto mb-3">StockUy</h1>
+            <!-- Botones de navegación -->
+            <div class="d-flex flex-column w-100">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
+                <!-- Contenedor de los enlaces de navegación -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav flex-column">
                         {{#each botones}}
-                            <li class="nav-link active nav-item">
-                                <a class="nav-link text-light boton" aria-current="page" href="{{ruta}}">{{nombre}}</a>
+                            <li class="nav-item">
+                                <a class="nav-link text-light boton" href="{{ruta}}">{{nombre}}</a>
                             </li>
                         {{/each}}
                     </ul>

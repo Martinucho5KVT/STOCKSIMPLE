@@ -1,0 +1,141 @@
+/* Carrito - Estilos generales */
+
+/* Estilos del contenedor principal del carrito */
+.carrito-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Título principal del carrito */
+  .carrito-container h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Contenedor de los productos en el carrito */
+  .productos-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Estilos de cada producto en el carrito */
+  .producto-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos del nombre y modelo del producto */
+  .producto-info p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  /* Estilos de la imagen del producto (si la agregas) */
+  .producto-info img {
+    max-width: 80px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  
+  /* Botón de eliminar producto */
+  .producto-eliminar button {
+    background-color: #dc3545;
+    border: none;
+    padding: 8px 20px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Cambia de color cuando el botón de eliminar es hover */
+  .producto-eliminar button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Estilos del contenedor del botón de comprar */
+  .compra-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  /* Estilo del botón de comprar */
+  .compra-container .btn-success {
+    background-color: #28a745;
+    border: none;
+    padding: 12px 30px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Cambia de color cuando el botón de comprar es hover */
+  .compra-container .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  /* Mensaje cuando el carrito está vacío */
+  .carrito-vacio {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #777;
+    padding: 50px 0;
+    font-weight: 600;
+  }
+  
+  /* Estilos adicionales para la fila de productos y el botón de eliminar */
+  .producto-carrito {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Adaptación en dispositivos móviles */
+  @media (max-width: 768px) {
+    .carrito-container {
+      padding: 20px;
+    }
+  
+    .producto-carrito {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .producto-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .producto-eliminar button {
+      width: 100%;
+      padding: 10px 0;
+    }
+  
+    .compra-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .compra-container .btn-success {
+      width: 100%;
+    }
+  }
