@@ -1,10 +1,7 @@
+import { encriptar } from "../../controaldores/controladores.js";
 
-const registro_post = (req,res)=>{
-    console.log(req.body.contra)
-    res.status(200).json({ redirect: "/login" })
-}
+const registro_post = (req, res) => {
+    res.status(200).json({ status: "ok", redirect: "/login" });
+};
 
-
-export{
-    registro_post
-}
+export { registro_post };
