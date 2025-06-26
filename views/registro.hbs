@@ -15,3 +15,18 @@
      <script src="registro.js"></script>
 </body>
 </html>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+
+  // Recibir mensaje de bienvenida del servidor
+  socket.on('mensaje', (msg) => {
+    console.log('🔔 Mensaje del servidor:', msg);
+  });
+
+  // Ejemplo: escuchar evento de producto agregado por otro usuario
+  socket.on('productoAgregado', ({ modelo }) => {
+    console.log(`🛒 Alguien agregó el modelo "${modelo}" al carrito`);
+  });
+</script>

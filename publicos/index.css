@@ -4,35 +4,32 @@
 .input-group-text{
     font-size: 2rem !important;
     font-weight: bold;
-    color: rgb(22, 110, 77);
-    border-left: 2px solid rgb(22, 110, 77);
-    border-top: 2px solid rgb(22, 110, 77);
-    border-bottom: 2px solid rgb(22, 110, 77);
-    border-right:  none;
-    box-shadow: 1px 1px 1px rgb(73, 73, 73),2px 2px 2px rgb(255, 255, 255),
-    3px 3px 3px rgb(42, 41, 41),4px 4px 2px rgb(255, 255, 255),5px 5px 2px rgb(15, 15, 15);
-
+    color: #34495E; /* gris azulado sobrio */
+    border-left: 2px solid #34495E;
+    border-top: 2px solid #34495E;
+    border-bottom: 2px solid #34495E;
+    border-right: none;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.4), 2px 2px 2px rgba(255,255,255,0.1),
+                3px 3px 3px rgba(52, 73, 94, 0.8), 4px 4px 2px rgba(255,255,255,0.05), 5px 5px 2px rgba(15,15,15,0.7);
 }
 .form-control{
-    border: 2px solid rgb(22, 110, 77);
-    border-right: 2px solid rgb(22, 110, 77);
-    border-top: 2px solid rgb(22, 110, 77);
-    border-bottom: 2px solid rgb(22, 110, 77);
-    border-left: 2px solid rgb(22, 110, 77);
-    box-shadow: 1px 1px 1px rgb(73, 73, 73),2px 2px 2px rgb(255, 255, 255),
-    3px 3px 3px rgb(42, 41, 41),4px 4px 2px rgb(255, 255, 255),5px 5px 2px rgb(15, 15, 15);
-   
+    border: 2px solid #34495E;
+    border-right: 2px solid #34495E;
+    border-top: 2px solid #34495E;
+    border-bottom: 2px solid #34495E;
+    border-left: 2px solid #34495E;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.4), 2px 2px 2px rgba(255,255,255,0.1),
+                3px 3px 3px rgba(52, 73, 94, 0.8), 4px 4px 2px rgba(255,255,255,0.05), 5px 5px 2px rgba(15,15,15,0.7);
 }
 .elemento {
     height: 500px;
     padding-left: 2%;
     padding-bottom: 2%;
-    
 }
 .card{
     height: 100%;
-    box-shadow: 1px 1px 1px rgb(73, 73, 73),2px 2px 2px rgb(255, 255, 255),
-    3px 3px 3px rgb(42, 41, 41),4px 4px 2px rgb(255, 255, 255),5px 5px 2px rgb(15, 15, 15);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.4), 2px 2px 2px rgba(255,255,255,0.1),
+                3px 3px 3px rgba(52, 73, 94, 0.8), 4px 4px 2px rgba(255,255,255,0.05), 5px 5px 2px rgba(15,15,15,0.7);
 }
 .imagen{
     width: 220px;
@@ -41,25 +38,25 @@
 .boton2{
     width: 150px;
     height: 40px;
-    background-color: white;
-    border: 2px solid rgb(22, 110, 77);
-    color: rgb(22, 110, 77);
+    background-color: #ECF0F1; /* blanco grisáceo suave */
+    border: 2px solid #34495E;
+    color: #34495E;
     font-weight: bold;
     margin-right: 50px;
-    box-shadow: 1px 1px 1px rgb(73, 73, 73),2px 2px 2px rgb(255, 255, 255),
-    3px 3px 3px rgb(42, 41, 41),4px 4px 2px rgb(255, 255, 255),5px 5px 2px rgb(15, 15, 15);
-    
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.4), 2px 2px 2px rgba(255,255,255,0.1),
+                3px 3px 3px rgba(52, 73, 94, 0.8), 4px 4px 2px rgba(255,255,255,0.05), 5px 5px 2px rgba(15,15,15,0.7);
 }
 .btn:nth-child(1){
     margin-left: 50px;
 }
 .boton2:hover{
     transition: .5s;
-    background-color: rgb(22, 110, 77);
-    border: 2px solid rgb(22, 110, 77);
+    background-color: #1ABC9C; /* verde agua */
+    border: 2px solid #1ABC9C;
+    color: #fff;
 }
 .texto2{
     font-weight: bold;
-    color: rgb(22, 110, 77);
+    color: #34495E;
     font-size: 1.5rem;
 }

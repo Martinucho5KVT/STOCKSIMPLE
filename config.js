@@ -1,25 +1,46 @@
-import express from 'express' // Importo el módulo de express que me sirve para facilitarme la creación de un servidor, para instalarlo: npm i express
-import morgan from 'morgan' // Solo instalar en modo de desarrollo, eliminar en modo de producción, da información de todas las conexiones entrantes , para instalar : npm i morgan
-import  hbs  from "hbs" // Importo el módulo de HBS para el motor de plantillas
-import { fileURLToPath } from "url" // para obtener las rutas del archivo actual
-import { dirname } from "path"
-import { config } from 'dotenv'
-config()
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+// config.js
+import express from 'express';
+import morgan from 'morgan';
+import hbs from 'hbs';
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+import { config } from 'dotenv';
+import { createServer } from 'http'; // 👈 necesario para usar Socket.IO
+import { Server as SocketIOServer } from 'socket.io'; // 👈 Socket.IO
 
+config();
 
-const servidor = express() // ejecuto la función de express
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-servidor.set('puerto', process.env.PORT || 80 || 8080) // Defino una configuración en el servidor que me crea una variable puerto que puede tomar el valor de una variable PORT si está definida como variables de entorno, sino usa el puerto 80 o sino el 8080
-servidor.use(express.json()) // .use es un middleware o intermediario, se ejecuta antes de las rutas de la aplicación, en este caso le pido al servidor que va a recibir la información desde el servidor express en formato json
-servidor.use(morgan('dev'))//.use es un middleware o intermediario, se ejecuta antes de las rutas de la aplicación, le pido que me muestre todas las conexiones, puedo ver las rutas a las que se quiere acceder
-servidor.use(express.static(`${__dirname}/publicos`)) // Establece los archivos estáticos que quiero compartir con el usuario, el resto  de los archivos del servidor no se pueden ver desde el frontend
-servidor.use("/css", express.static(`${__dirname}/node_modules/bootstrap/dist/css`))//Establecer los archivos css para bootstrap
-servidor.use("/js", express.static(`${__dirname}/node_modules/bootstrap/dist/js`))//Establecer los archivos js para bootstrap
-servidor.set("view engine","hbs") // Voy a establecer mi motor de plantillas de Handlebars
-hbs.registerPartials(`${__dirname}/views/partials`) // Creo la ruta de mis partials para reutilizar los componentes que voy a crear
-servidor.listen(servidor.get("puerto"))
+const servidor = express();
+const httpServer = createServer(servidor); // 👈 creamos servidor HTTP
+const io = new SocketIOServer(httpServer); // 👈 inicializamos Socket.IO
+
+// Configuración básica
+servidor.set('puerto', process.env.PORT || 80 || 8080);
+servidor.use(express.json());
+servidor.use(morgan('dev'));
+servidor.use(express.static(`${__dirname}/publicos`));
+servidor.use("/css", express.static(`${__dirname}/node_modules/bootstrap/dist/css`));
+servidor.use("/js", express.static(`${__dirname}/node_modules/bootstrap/dist/js`));
+servidor.set("view engine", "hbs");
+hbs.registerPartials(`${__dirname}/views/partials`);
+
+// Escuchar conexiones con Socket.IO
+io.on('connection', (socket) => {
+    console.log('🔌 Cliente conectado:', socket.id);
+
+    socket.emit('mensaje', '¡Bienvenido al servidor WebSocket!');
+
+    socket.on('disconnect', () => {
+        console.log('❌ Cliente desconectado:', socket.id);
+    });
+});
+
+// Exportamos el servidor Express y el HTTP server
 export {
-    servidor // exporto la configuración completa de mi servidor
-}
+    servidor,
+    httpServer, // 👈 esto lo vas a usar en `index.js`
+    io // si querés usarlo en otras partes
+};

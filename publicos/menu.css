@@ -4,9 +4,12 @@
     left: 0;
     width: 200px; /* Ancho de la barra de menú */
     height: 100%; /* Altura de la barra de menú */
-    background-color: rgb(9, 222, 241);
-    box-shadow: 1px 1px 1px rgb(73, 73, 73), 2px 2px 2px rgb(255, 255, 255),
-        3px 3px 3px rgb(42, 41, 41), 4px 4px 2px rgb(255, 255, 255), 5px 5px 2px rgb(15, 15, 15);
+    background-color: #2C3E50; /* Azul oscuro sobrio */
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.5), 
+                2px 2px 2px rgba(255, 255, 255, 0.1),
+                3px 3px 3px rgba(44, 62, 80, 0.8), 
+                4px 4px 2px rgba(255, 255, 255, 0.05), 
+                5px 5px 2px rgba(15, 15, 15, 0.7);
 
     display: flex;
     flex-direction: column; /* Organiza los elementos en columna */
@@ -42,16 +45,18 @@
     align-items: center;
     width: 100%; /* Los botones ocupan todo el ancho */
     height: 60px; /* Altura de los botones */
-    background-color: violet;
-    color: red;
+    background-color: #34495E; /* Gris azulado sobrio */
+    color: #ECF0F1; /* Texto blanco suave */
     margin-bottom: 10px;
     border-radius: 5px; /* Bordes redondeados opcionales */
     text-align: center;
     padding: 0; /* Elimina padding innecesario */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .boton:hover {
-    background-color: #9b4dca; /* Cambiar el color cuando se pase el ratón por encima */
+    background-color: #1ABC9C; /* Verde agua al pasar el ratón */
 }
 
 .imagen_logo {
@@ -65,12 +70,14 @@
     font-weight: bold;
     letter-spacing: 5px;
     text-align: center;
-    color: white;
+    color: #ECF0F1; /* Texto blanco suave */
     margin-bottom: 20px; /* Espacio debajo del texto */
 }
-.row {
+
+.fondo_menu .row {
     display: flex;
-    flex-direction: column; /* Esto hace que los elementos hijos se dispongan en una columna */
-    align-items: center; /* Esto centra los elementos en el eje horizontal */
-    justify-content: flex-start; /* Esto alinea los elementos al inicio del contenedor */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
+

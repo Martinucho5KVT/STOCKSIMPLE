@@ -58,3 +58,27 @@
         });
     }
 </script>
+
+<!-- Notificación visual -->
+<div id="noti" class="alert alert-info" style="display: none; position: fixed; top: 20px; right: 20px; z-index: 1000;">
+  <!-- El mensaje se completa con JS -->
+</div>
+
+<!-- Socket.IO -->
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+
+  // Escuchar mensaje general del servidor
+  socket.on('mensaje', (msg) => {
+    console.log('📨 Servidor:', msg);
+  });
+
+  // Mostrar notificación visual si alguien agrega un producto
+  socket.on('productoAgregado', ({ modelo }) => {
+    const noti = document.getElementById('noti');
+    noti.textContent = `🛒 Alguien agregó el modelo "${modelo}" al carrito`;
+    noti.style.display = 'block';
+    setTimeout(() => noti.style.display = 'none', 3000); // Oculta después de 3s
+  });
+</script>

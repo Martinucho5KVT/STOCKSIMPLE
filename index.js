@@ -1,3 +1,4 @@
+import { io } from './config.js';
 import { servidor } from './config.js'
 import { inicio } from "./rutas_backend/get/inicio.js"
 import { login } from "./rutas_backend/get/login.js"
@@ -26,19 +27,20 @@ servidor
   .post("/registro", [encriptar], registro_post)  // Ruta para procesar el registro
   .post("/login", login_post)  // Ruta para procesar el login
   .post("/agregarCarrito", (req, res) => {
-    const { modelo } = req.body;  // Obtener el modelo del producto
+    const { modelo } = req.body;
     const carrito = req.cookies.carrito || [];
-    
-    // Verificar si el producto ya está en el carrito
+
     const productoExistente = carrito.find(producto => producto.modelo === modelo);
     if (productoExistente) {
       return res.status(400).send({ status: 'error', message: 'El producto ya está en el carrito' });
     }
-    
-    // Si no existe, agregarlo al carrito
+
     carrito.push({ modelo });
-    res.cookie('carrito', carrito, { maxAge: 3600000, httpOnly: true });  // Guardamos el carrito en la cookie
+    res.cookie('carrito', carrito, { maxAge: 3600000, httpOnly: true });
     res.status(200).send({ status: 'ok', message: 'Producto agregado al carrito' });
+
+    // 👉 Emitimos a todos los clientes conectados
+    io.emit('productoAgregado', { modelo });
   })
   .post("/eliminarCarrito", (req, res) => {
     const { modelo } = req.body;  // Obtener el modelo del producto a eliminar
@@ -51,4 +53,10 @@ servidor
     // Procesar la compra: por ahora solo vaciamos el carrito
     res.clearCookie('carrito');  // Limpiamos la cookie del carrito
     res.status(200).send({ status: 'ok', message: 'Compra realizada' });
+  });
+  import { httpServer } from './config.js';
+
+  const PORT = process.env.PORT || 80 || 8080;
+  httpServer.listen(PORT, () => {
+    console.log(`🚀 Servidor escuchando en http://localhost:${PORT}`);
   });
