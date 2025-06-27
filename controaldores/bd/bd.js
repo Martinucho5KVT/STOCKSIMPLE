@@ -1,21 +1,22 @@
-// Conectar a la base de datos
-import mysql from 'mysql2'
+import mysql from 'mysql2';
+import dotenv from 'dotenv';
 
-// Configura los detalles de tu conexión
+dotenv.config();
+
 const conectar = mysql.createConnection({
-    host: process.env.ip,        // Cambia esto si tu base de datos está en otro host
-    user: process.env.usuario,   // Tu nombre de usuario
-    password: process.env.contra, // Tu contraseña
-    database: process.env.bd      // El nombre de la base de datos a la que te quieres conectar
-});
-conectar.connect((err) => {
-    if (err) {
-        console.error('Error conectando a la base de datos:', err.stack)
-        return;
-    }
-    console.log('Conectado a la base de datos como ID ' + conectar.threadId)
+  host: process.env.ip || '127.0.0.1',
+  user: process.env.usuario,
+  password: process.env.contra,
+  database: process.env.bd,
+  port: process.env.puerto ? Number(process.env.puerto) : 3306,
 });
 
-export {
-    conectar
-} // Exporta la conexión para usarla en otros archivos
+conectar.connect((err) => {
+  if (err) {
+    console.error('Error conectando a la base de datos:', err.stack);
+    return;
+  }
+  console.log('Conectado a la base de datos como ID ' + conectar.threadId);
+});
+
+export { conectar };
